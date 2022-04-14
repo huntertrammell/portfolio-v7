@@ -6,10 +6,10 @@ module.exports = {
   ],
   theme: {
     colors: {
-      primary: "#04c4c7ff",
-      secondary: "#dc7f9bff",
-      dark: "#2f2f2fff",
-      light: "#faf9f9ff",
+      primary: "#04c4c7",
+      secondary: "#dc7f9b",
+      dark: "#2f2f2f",
+      light: "#faf9f9",
     },
     extend: {
       fontFamily: {
@@ -18,8 +18,12 @@ module.exports = {
       },
       backgroundImage: {
         "primary-drip": "url('/assets/images/primary_drip.png')",
+        "sticker-bomb":
+          "linear-gradient(rgba(250,249,249), rgba(250,249,249, .8), rgba(250,249,249)), url('/assets/images/sticker-bomb.jpg')",
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require("@tailwindcss/forms"),
+  ],
 };

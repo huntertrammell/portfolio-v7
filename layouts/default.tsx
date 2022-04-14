@@ -6,7 +6,7 @@ const Layout = ({ children }) => (
       <title>Hunter Trammell</title>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
-    <main className="bg-light lg:p-10 p-7 font-sans">{children}</main>
+    <main className="bg-light font-sans">{children}</main>
   </>
 );
 
