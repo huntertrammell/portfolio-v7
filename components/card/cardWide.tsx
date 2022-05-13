@@ -1,26 +1,34 @@
 import Image from "next/image";
-import graphic from "../../public/assets/images/sticker-bomb.jpg";
 
-const CardWide = () => {
+const CardWide = ({ project }) => {
+  console.log(project);
   return (
     <article className="flex flex-col lg:flex-row my-10">
-      <div className="max-w-xl mx-auto relative">
-        <Image src={graphic} className="object-cover h-full" />
+      <div className="max-w-xl mx-auto relative h-96 w-full">
+        <Image
+          src={project.cover_photo.formats.large.url}
+          height="450"
+                  width="700"
+                  layout="fill"
+          className="object-cover h-full w-full"
+        />
         <div className="px-4 py-3 absolute lg:bottom-8 xl:bottom-2 right-0 hidden lg:block">
-          <ul className="list-none flex p-0 m-0">
-            <li className="shadow-lg rounded bg-primary text-dark font-secondary px-2 py-1 mr-2">
-              WordPress
-            </li>
-            <li className="shadow-lg rounded bg-primary text-dark font-secondary px-2 py-1 mr-2">
-              JavaScript
-            </li>
+          <ul className="list-none flex p-0 m-0 flex-wrap">
+            {project.staxonomies.map((tech) => (
+              <li
+                key={tech.id}
+                className="shadow-lg rounded bg-primary text-dark font-secondary px-2 py-1 mr-2 mb-2"
+              >
+                {tech.title}
+              </li>
+            ))}
           </ul>
         </div>
       </div>
       <div className="py-4 lg:px-4 flex flex-col align-center">
         <div className="bg-primary text-dark px-4 py-3 flex justify-between">
           <h3 className="font-secondary text-xl lg:text-2xl inline">
-            Hello World
+            {project.title}
           </h3>
           <div className="flex">
             <a href="#" className="flex items-center">
@@ -41,14 +49,11 @@ const CardWide = () => {
           </div>
         </div>
         <div className="p-4 pb-3">
-          <p className="text-dark text-lg pb-5">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Et quam
-            obcaecati provident. Asperiores nemo, labore nam eveniet iste
-            laboriosam a libero neque commodi pariatur incidunt sint sequi
-            dolorem consequuntur eaque.
-          </p>
+          <p className="text-dark text-lg pb-5">{project.preview_text}</p>
           <a
-            href="#"
+            href={project.url}
+            target="_blank"
+            rel="noopener"
             className="bg-primary px-6 py-2 text-center hover:scale-105 cursor-pointer font-secondary text-dark text-lg transition-all"
           >
             View Project

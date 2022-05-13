@@ -1,6 +1,10 @@
 const Contact = () => {
   return (
-    <form className="w-full max-w-3xl mx-auto p-4 lg:p-10">
+    <form
+      action="https://formspree.io/f/xgedrzak"
+      method="POST"
+      className="w-full max-w-3xl mx-auto px-0 lg:p-10"
+    >
       <div className="flex flex-wrap -mx-3 mb-6">
         <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
           <label
@@ -13,6 +17,8 @@ const Contact = () => {
             className="appearance-none block w-full bg-gray-200 text-dark border border-dark rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-primary"
             type="text"
             id="first-name"
+            name="first-name"
+            required
             placeholder="Jane"
           />
         </div>
@@ -27,6 +33,8 @@ const Contact = () => {
             className="appearance-none block w-full bg-gray-200 text-dark border border-dark rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-primary"
             type="text"
             id="last-name"
+            name="last-name"
+            required
             placeholder="Doe"
           />
         </div>
@@ -44,6 +52,8 @@ const Contact = () => {
             className="appearance-none block w-full bg-gray-200 text-dark border border-dark rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-primary"
             id="email"
             type="email"
+            name="email"
+            required
             placeholder="notspam@hotmail.ru"
           />
         </div>
@@ -57,6 +67,8 @@ const Contact = () => {
             Message
           </label>
           <textarea
+            name="message"
+            required
             className=" no-resize appearance-none block w-full bg-gray-200 text-dark border border-dark rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-primary h-48 resize-none"
             id="message"
           ></textarea>
@@ -65,8 +77,8 @@ const Contact = () => {
       <div className="md:flex md:items-center">
         <div className="md:w-1/3">
           <button
-            className="bg-primary px-6 py-2 text-center hover:scale-105 cursor-pointer font-secondary text-dark transition-all"
-            type="button"
+            className="bg-primary px-6 py-2 text-center hover:scale-105 cursor-pointer font-secondary text-light transition-all"
+            type="submit"
           >
             Send
           </button>
